@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+  
+</head>
+<body>
+  <!-- <h1>Chat</h1> -->
+
+  <div class="chat">
+    <div class="chat__sidebar left">
+      <h3>Users</h3>
+      <div id="users"></div>
+    </div>
+    <div class="chat__main">
+      <ul id="messages" class="chat__messages"></ul>
+      <div class="chat__footer">
+        <form id="message-form" action="" method="">
+          <input class="input" name="message" placeholder="Start typing ..." type="text" autofocus autocomplete="false">
+          <button class="btn">Send</button> 
+        </form>
+        <button class="btn" id="send-location">Location</button>
+      </div>
+    </div>
+    <div class="chat__sidebar right"><h3>Info</h3></div>
+  </div>
+  
+
+  <script id="message-template" type="text/template">
+    <li class="message">
+      <span class="message__sender">{{sender}} :</span>
+      <p class="message__text">{{text}}</p>
+      <span class="message__time">{{time}}</span>
+    </li>
+  </script>
+
+  <script id="location-message-template" type="text/template">
+    <li class="message">
+      <span class="message__sender">{{sender}} :</span>
+      <p class="message__text">
+        <a href="{{url}}" target="_blank">My Location</a>
+      </p>
+      <span class="message__time">{{time}}</span>
+    </li>
+  </script>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/moment.js"></script>
+  <script src="./js/mustache.js"></script>
+  <script src="./js/deparam.js"></script>
+  <script src="./js/chat.js"></script>
+</body>
+</html>
