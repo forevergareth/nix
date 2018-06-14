@@ -1,4 +1,4 @@
-# Lexical - Chat Application
+# Nix - Chat + Notes + Time Tracker Application
 ___
 
 ## Libraries Used
